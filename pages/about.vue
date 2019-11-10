@@ -103,7 +103,7 @@
     </article>
     <figure class="aboutme">
       <div class="name">
-        <img src="icon.png" class="yahiro" alt="星乃やひろ (Yahiro Hoshino)" />
+        <img src="/icon.png" class="yahiro" alt="星乃やひろ (Yahiro Hoshino)" />
         <h1>星乃やひろ</h1>
         <p>Yahiro Hoshino</p>
       </div>
