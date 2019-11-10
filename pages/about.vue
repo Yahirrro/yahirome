@@ -26,7 +26,7 @@
 
       <div class="poster_image">
           <div class="inner">
-              <img class="sm-shot" src="web.png" alt="">
+              <img class="sm-shot" src="/web.png" alt="">
           </div>
       </div>
 
@@ -41,7 +41,7 @@
 
       <div class="poster_image">
         <div class="inner">
-            <div class="loop" style="background-image: url(all.png);"></div>
+            <div class="loop" style="background-image: url(/all.png);"></div>
         </div>
       </div>
 
@@ -51,12 +51,12 @@
         <div class="container">
             <h2>過去の主な<strong>取引先</strong></h2>
             <div class="company-icon">
-              <img src="company/TAKARA_TOMY_logo.png" alt="">
-              <img src="company/UNO_logo.png" alt="">
-              <img src="company/uuum_logo.png" alt="">
-              <img src="company/pocodun_logo.png" alt="">
-              <img src="company/easeus_logo.png" alt="">
-              <img src="company/stampit_logo.svg" alt="">
+              <img src="/company/TAKARA_TOMY_logo.png" alt="">
+              <img src="/company/UNO_logo.png" alt="">
+              <img src="/company/uuum_logo.png" alt="">
+              <img src="/company/pocodun_logo.png" alt="">
+              <img src="/company/easeus_logo.png" alt="">
+              <img src="/company/stampit_logo.svg" alt="">
             </div>
         </div>
 
