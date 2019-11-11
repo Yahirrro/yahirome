@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header id="page-header">
       <div class="content">
         <h1>
           <span>{{title}}</span>
@@ -14,7 +14,7 @@
 </template>
 
 <style lang="scss">
-header {
+header#page-header {
   position: relative;
   height: 100vh;
 

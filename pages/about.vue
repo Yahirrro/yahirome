@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-anm :title="'About'" :description="'About Yahiro Hoshino'"/>
+    <header-anm :title="'About'" :description="'About Yahiro Hoshino'" />
     <article id="content">
       <div class="container">
         <h2>
@@ -14,9 +14,9 @@
       </div>
 
       <div class="poster_image">
-          <div class="inner">
-              <img class="sm-shot" src="/web.png" alt="">
-          </div>
+        <div class="inner">
+          <img class="sm-shot" src="/web.png" alt />
+        </div>
       </div>
 
       <div class="container">
@@ -30,65 +30,66 @@
 
       <div class="poster_image">
         <div class="inner">
-            <div class="loop" style="background-image: url(/all.png);"></div>
+          <div class="loop" style="background-image: url(/all.png);"></div>
         </div>
       </div>
 
       <div class="grid-2c">
-        
-
         <div class="container">
-            <h2>過去の主な<strong>取引先</strong></h2>
-            <div class="company-icon">
-              <img src="/company/TAKARA_TOMY_logo.png" alt="">
-              <img src="/company/UNO_logo.png" alt="">
-              <img src="/company/uuum_logo.png" alt="">
-              <img src="/company/pocodun_logo.png" alt="">
-              <img src="/company/easeus_logo.png" alt="">
-              <img src="/company/stampit_logo.svg" alt="">
-            </div>
+          <h2>
+            過去の主な
+            <strong>取引先</strong>
+          </h2>
+          <div class="company-icon">
+            <img src="/company/TAKARA_TOMY_logo.png" />
+            <img src="/company/UNO_logo.png" />
+            <img src="/company/uuum_logo.png" />
+            <img src="/company/pocodun_logo.png" />
+            <img src="/company/easeus_logo.png" />
+            <img src="/company/stampit_logo.svg" />
+            <img src="/company/ikasa_logo.png" />
+          </div>
         </div>
 
         <div class="container">
-        <h2>できること</h2>
-        <figure class="category">
-            <h3><strong>ツール</strong></h3>
+          <h2>できること</h2>
+          <figure class="category">
+            <h3>
+              <strong>ツール</strong>
+            </h3>
             <ul class="skils">
-                <li>Adobe Illustrator</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Premiere Pro</li>
-                <li>Adobe XD</li>
+              <li>Adobe Illustrator</li>
+              <li>Adobe Photoshop</li>
+              <li>Adobe Premiere Pro</li>
+              <li>Adobe XD</li>
             </ul>
-        </figure>
-        <figure class="category">
-            <h3><strong>スキル</strong></h3>
+          </figure>
+          <figure class="category">
+            <h3>
+              <strong>スキル</strong>
+            </h3>
             <ul class="skils">
-                <li>Webデザイン</li>
-                <li>フロントエンド</li>
-                <li>UI / UXデザイン</li>
-                <li>動画制作</li>
+              <li>Webデザイン</li>
+              <li>フロントエンド</li>
+              <li>UI / UXデザイン</li>
+              <li>動画制作</li>
             </ul>
-        </figure>
-        <figure class="category">
-            <h3><strong>プログラミング言語</strong></h3>
+          </figure>
+          <figure class="category">
+            <h3>
+              <strong>プログラミング言語</strong>
+            </h3>
             <ul class="skils">
-                <li>HTML</li>
-                <li>CSS / SCSS</li>
-                <li>PHP</li>
-                <li>Javascript</li>
-                <li>Vue.js</li>
-                <li>Nuxt.js</li>
+              <li>HTML</li>
+              <li>CSS / SCSS</li>
+              <li>PHP</li>
+              <li>Javascript</li>
+              <li>Vue.js</li>
+              <li>Nuxt.js</li>
             </ul>
-        </figure>
-        
+          </figure>
+        </div>
       </div>
-
-      </div>
-
-      
-
-      
-
     </article>
     <figure class="aboutme">
       <div class="name">
@@ -98,7 +99,9 @@
       </div>
       <div class="description">
         <p>
-          学生の頃にWebサイトやプログラムに興味を持ったことがきっかけで、Webデザインを中心に、プログラムやデザインの勉強をはじめました。 世界最大級の動画サイト「<span>YouTube</span>」では、特定の人物のみに表示される「チャンネルの認証バッジ」が付与され、 オンラインマーケット「<span>Coconala</span>」では、販売総数が150件を突破し、やりとりを通してたくさんのお喜びの声をいただいております。
+          学生の頃にWebサイトやプログラムに興味を持ったことがきっかけで、Webデザインを中心に、プログラムやデザインの勉強をはじめました。 世界最大級の動画サイト「
+          <span>YouTube</span>」では、特定の人物のみに表示される「チャンネルの認証バッジ」が付与され、 オンラインマーケット「
+          <span>Coconala</span>」では、販売総数が150件を突破し、やりとりを通してたくさんのお喜びの声をいただいております。
         </p>
       </div>
     </figure>
@@ -125,7 +128,6 @@ article#content {
     }
   }
 
-
   .poster_image {
     max-width: 800px;
     margin-left: auto;
@@ -139,41 +141,41 @@ article#content {
       height: 400px;
       background-color: rgba(0, 0, 0, 0.05);
       img.sm-shot {
-          height: calc(100% + 100px);
+        height: calc(100% + 100px);
       }
       .loop {
-          z-index: 1;
-          background-size: cover;
-          width: 100%;
-          height: calc(650px - 165px);
-          overflow: hidden;
-          animation: loop 60s linear infinite;
-          @keyframes loop {
-			0% {
-				background-position: 7590px top;
-			}
-			100% {
-				background-position: -1260px top;
-			}
-		}
-	  }
+        z-index: 1;
+        background-size: cover;
+        width: 100%;
+        height: calc(650px - 165px);
+        overflow: hidden;
+        animation: loop 60s linear infinite;
+        @keyframes loop {
+          0% {
+            background-position: 7590px top;
+          }
+          100% {
+            background-position: -1260px top;
+          }
+        }
+      }
     }
   }
 
   .company-icon {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      transform: translateX(10px);
-      margin-top: 40px;
-      @media (max-width: 767.98px) {
-        justify-content: center;
-      }
-      img {
-          height: 40px;
-          margin-right: 10px;
-          margin-bottom: 20px;
-      }
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    transform: translateX(10px);
+    margin-top: 40px;
+    @media (max-width: 767.98px) {
+      justify-content: center;
+    }
+    img {
+      height: 40px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   .category {
@@ -185,46 +187,45 @@ article#content {
       border: 0;
       vertical-align: baseline;
       li {
-          height: 32px;
-          line-height: 32px;
-          display: inline-block;
-          margin: 0 8px 10px 0;
-          padding: 0 8px;
-          font-size: 12px;
-          color: black;
-          border: 1px solid black;
-          letter-spacing: 0.01em;
+        height: 32px;
+        line-height: 32px;
+        display: inline-block;
+        margin: 0 8px 10px 0;
+        padding: 0 8px;
+        font-size: 12px;
+        color: black;
+        border: 1px solid black;
+        letter-spacing: 0.01em;
       }
     }
   }
 
   .grid-2c {
-      max-width: 1200px;
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: auto;
-      margin-top: 100px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+    @media (max-width: 767.98px) {
+      display: block;
+      text-align: center;
+    }
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-top: 0px;
       margin-bottom: 50px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-      text-align: left;
-      @media (max-width: 767.98px) {
-        display: block;
-        text-align: center;
-      }
-      .container {
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 50px;
-        &:last-of-type {
+      &:last-of-type {
         margin-bottom: 0px;
-        }
       }
+    }
   }
-  
 }
 
 figure.aboutme {
@@ -286,8 +287,23 @@ figure.aboutme {
 <script>
 import headerAnm from "~/components/header/header_animated.vue";
 export default {
+  head() {
+    return {
+      title: "About" + " | 星乃やひろ (Yahiro Hoshino)",
+      meta: [
+        {
+          property: "og:type",
+          content: "website"
+        },
+        {
+          property: "og:url",
+          content: "https://yahiro.me/about"
+        },
+      ]
+    };
+  },
   components: {
-      headerAnm
+    headerAnm
   }
 };
 </script>

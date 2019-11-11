@@ -1,3 +1,5 @@
+require("dotenv").config();
+const { APIKEY_works } = process.env;
 export default {
   mode: "spa",
   /*
@@ -6,7 +8,7 @@ export default {
   head: {
     title: "星乃やひろ (Yahiro Hoshino)",
     htmlAttrs: {
-      lang: 'ja'
+      lang: "ja"
     },
     meta: [
       { charset: "utf-8" },
@@ -26,9 +28,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    { src: "~/assets/scss/design.scss", lang: "scss" },
-  ],
+  css: [{ src: "~/assets/scss/design.scss", lang: "scss" }],
 
   /*
    ** Plugins to load before mounting the App
@@ -52,9 +52,13 @@ export default {
     extend(config, ctx) {}
   },
 
+  env: {
+    APIKEY_works
+  },
+
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
+    scrollBehavior: function(to, from, savedPosition) {
+      return { x: 0, y: 0 };
     }
   }
 };

@@ -10,18 +10,20 @@
       </svg>
     </nuxt-link>
     <navbar />
-    <transition>
+    <transition name="page">
       <nuxt />
     </transition>
     <mainfooter v-if="$nuxt.$route.name !== 'index'" />
   </div>
 </template>
 <style lang="scss">
-.page-enter-active, .page-leave-active {
-  transition: opacity 0.1s
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 1s;
 }
-.page-enter, .page-leave-active {
-  opacity: 0
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }
 </style>
 <script>
