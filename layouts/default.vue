@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="__top__right__title">星乃やひろは工事中。</h1>
+    <h1 class="__top__right__title">星乃やひろ</h1>
     <nuxt-link to="/" aria-label="Go to Top">
       <svg class="__top__left__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 566">
         <polygon
@@ -13,23 +13,24 @@
     <transition>
       <nuxt />
     </transition>
+    <mainfooter v-if="$nuxt.$route.name !== 'index'" />
   </div>
 </template>
 <style lang="scss">
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s ease-out;
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.1s
 }
-.v-enter,
-.v-leave-to {
-  opacity: 0;
+.page-enter, .page-leave-active {
+  opacity: 0
 }
 </style>
 <script>
 import navbar from "~/components/navbar.vue";
+import mainfooter from "~/components/footer.vue";
 export default {
   components: {
-    navbar
+    navbar,
+    mainfooter
   }
 };
 </script>

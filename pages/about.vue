@@ -1,17 +1,6 @@
 <template>
   <div>
-    <header>
-      <div class="content">
-        <h1>
-          <span>About</span>
-        </h1>
-        <div class="big">About</div>
-        <div class="left__top__box"></div>
-        <div class="left__top__text">About Yahiro Hoshino</div>
-        <div class="left__bottom__border"></div>
-        <div class="left__center__border"></div>
-      </div>
-    </header>
+    <header-anm :title="'About'" :description="'About Yahiro Hoshino'"/>
     <article id="content">
       <div class="container">
         <h2>
@@ -123,7 +112,7 @@ article#content {
   letter-spacing: 0.25em;
   margin-bottom: 100px;
   .container {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
     max-width: 700px;
     padding-left: 15px;
@@ -173,7 +162,7 @@ article#content {
 
   .company-icon {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       flex-wrap: wrap;
       transform: translateX(10px);
       margin-top: 40px;
@@ -229,7 +218,10 @@ article#content {
         padding-left: 0px;
         padding-right: 0px;
         margin-top: 0px;
+        margin-bottom: 50px;
+        &:last-of-type {
         margin-bottom: 0px;
+        }
       }
   }
   
@@ -292,7 +284,10 @@ figure.aboutme {
 }
 </style>
 <script>
+import headerAnm from "~/components/header/header_animated.vue";
 export default {
-  components: {}
+  components: {
+      headerAnm
+  }
 };
 </script>

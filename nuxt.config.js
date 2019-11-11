@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "星乃やひろ (Yahiro Hoshino)",
     htmlAttrs: {
       lang: 'ja'
     },
@@ -17,7 +17,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }]
   },
   /*
    ** Customize the progress-bar color
@@ -28,7 +28,6 @@ export default {
    */
   css: [
     { src: "~/assets/scss/design.scss", lang: "scss" },
-    { src: "~/assets/scss/about.scss", lang: "scss" }
   ],
 
   /*
@@ -51,5 +50,11 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
   }
 };
