@@ -75,9 +75,9 @@ body {
   letter-spacing: -0.01em;
 
   @media (max-width: 767.98px) {
-    transform: translateX(-8px) scale(0.8);
+    transform: scale(0.8);
     bottom: 13px;
-    left: 0px;
+    left: -1px;
   }
 
   &__a-box {

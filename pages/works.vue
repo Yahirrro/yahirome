@@ -9,7 +9,13 @@
         <article class="post-card" v-for="works in works" :key="works.id">
           <nuxt-link :to="'/works/'+works.id">
             <div class="image" :style="'background-image: url('+works.thumbnail.url+');'"></div>
-            <div class="category" v-html="works.category"></div>
+            <div class="category">
+              <div
+                class="content"
+                v-for="category in works.category"
+                :key="category.id"
+              >{{category.title}}</div>
+            </div>
             <div class="text">
               <h1 v-html="works.title"></h1>
             </div>
@@ -79,12 +85,15 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: 5px;
-        background-color: yellow;
-        font-weight: bold;
-        font-size: 0.8rem;
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
+        display: flex;
+        .content {
+          padding: 5px;
+          background-color: yellow;
+          font-weight: bold;
+          font-size: 0.8rem;
+          border-left: 2px solid black;
+          border-bottom: 2px solid black;
+        }
       }
       .text {
         padding-left: 10px;
@@ -122,7 +131,7 @@ export default {
   },
   data() {
     return {
-      works: []
+      works: {}
     };
   },
 

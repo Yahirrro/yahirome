@@ -96,6 +96,9 @@
         <img src="/icon.png" class="yahiro" alt="星乃やひろ (Yahiro Hoshino)" />
         <h1>星乃やひろ</h1>
         <p>Yahiro Hoshino</p>
+        <p>
+          <small>高校生</small>
+        </p>
       </div>
       <div class="description">
         <p>
@@ -265,8 +268,10 @@ figure.aboutme {
       margin-bottom: 0;
       font-size: 0.8rem;
       color: #6f6f6f;
-      @media (max-width: 767.98px) {
-        margin-bottom: 1rem;
+      &:last-of-type {
+        @media (max-width: 767.98px) {
+          margin-bottom: 1rem;
+        }
       }
     }
   }
@@ -298,7 +303,7 @@ export default {
         {
           property: "og:url",
           content: "https://yahiro.me/about"
-        },
+        }
       ]
     };
   },

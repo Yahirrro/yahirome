@@ -1,21 +1,29 @@
 <template>
   <div>
     <header id="post">
+      <div class="bg-color"></div>
+      <div class="bg" :style="'background-image: url('+page.thumbnail.url+')'"></div>
       <div class="grid">
-        <div class="image" :style="'background-image: url('+works.thumbnail.url+');'"></div>
+        <div class="image" :style="'background-image: url('+page.thumbnail.url+');'"></div>
         <div class="text">
-          <p class="type">{{$route.params.type}}</p>
-          <h1 v-html="works.title"></h1>
+          <div class="category">
+            <div
+              class="content"
+              v-for="category in page.category"
+              :key="category.id"
+            >{{category.title}}</div>
+          </div>
+          <h1 v-html="page.title"></h1>
         </div>
       </div>
     </header>
     <article class="post">
       <div class="thumb">
-        <img :src="works.thumbnail.url" />
+        <img :src="page.thumbnail.url" />
       </div>
-      <div class="container" v-html="works.body"></div>
+      <div class="container" v-html="page.body"></div>
     </article>
-    <a class="gocheck" :href="works.link" v-if="works.link" target="_blank">
+    <a class="gocheck" :href="page.link" v-if="page.link" target="_blank">
       みにいく
       <svg
         aria-hidden="true"
@@ -64,8 +72,30 @@ header#post {
   background-size: cover;
   letter-spacing: 0.11em;
   height: 400px;
-  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  .bg-color {
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 0.85)
+    );
+    width: 100%;
+    position: absolute;
+    height: 400px;
+  }
+  .bg {
+    width: 100%;
+    position: absolute;
+    height: 400px;
+    background: url(https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1427&q=80);
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    transform: scale(1.2);
+  }
   .grid {
+    z-index: 5;
     position: absolute;
     left: 50%;
     bottom: 50px;
@@ -102,16 +132,17 @@ header#post {
     p {
       margin: 0;
     }
-    p {
-      display: inline-block;
-      background-color: yellow;
-      margin-bottom: 1rem;
-      padding: 5px;
-      border: solid 2px black;
-      letter-spacing: 0em;
-      text-transform: capitalize;
-      font-family: niveau-grotesk, sans-serif;
-      font-style: italic;
+    .category {
+      display: flex;
+      .content {
+        padding: 5px;
+        background-color: yellow;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border: 2px solid black;
+        margin-right: 10px;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
@@ -195,20 +226,20 @@ import axios from "axios";
 export default {
   head() {
     return {
-      title: this.works.title + " | 星乃やひろ (Yahiro Hoshino)",
+      title: this.page.title + " | 星乃やひろ (Yahiro Hoshino)",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.works.body
+          content: this.page.body
         },
         {
           property: "og:title",
-          content: this.works.title
+          content: this.page.title
         },
         {
           property: "og:description",
-          content: this.works.body
+          content: this.page.body
         },
         {
           property: "og:type",
@@ -242,21 +273,21 @@ export default {
   },
   data() {
     return {
-      works: {}
+      page: {}
     };
   },
   asyncData({ params, error }) {
     return axios
-      .get(`https://yahiro.microcms.io/api/v1/works/${params.id}`, {
+      .get(`https://yahiro.microcms.io/api/v1/${params.type}/${params.id}`, {
         headers: { "X-API-KEY": process.env.APIKEY_works }
       })
       .then(res => {
         return {
-          works: res.data
+          page: res.data
         };
       })
       .catch(e => {
-        error({ statusCode: 404, message: "Post not found" });
+        error({ statusCode: 404, message: "ページが見つかりません" });
       });
   }
 };
