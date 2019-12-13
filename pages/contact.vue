@@ -6,9 +6,9 @@
         <span>お問い合わせ</span>
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
-      
+
       <no-ssr>
-        <form name="contact" netlify>
+        <form name="contact" method="POST" data-netlify="true">
 
           <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
           <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
