@@ -7,7 +7,7 @@
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
 
-      <form @submit.prevent="onSubmit" name="contact" netlify>
+      <form name="contact" netlify>
 
         <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
         <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
