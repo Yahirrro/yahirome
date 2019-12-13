@@ -95,16 +95,14 @@
       <div class="name">
         <img src="/icon.png" class="yahiro" alt="星乃やひろ (Yahiro Hoshino)" />
         <h1>星乃やひろ</h1>
-        <p>Yahiro Hoshino</p>
+        <p class="initial">Yahiro Hoshino</p>
         <p>
           <small>高校生</small>
         </p>
       </div>
       <div class="description">
         <p>
-          学生の頃にWebサイトやプログラムに興味を持ったことがきっかけで、Webデザインを中心に、プログラムやデザインの勉強をはじめました。 世界最大級の動画サイト「
-          <span>YouTube</span>」では、特定の人物のみに表示される「チャンネルの認証バッジ」が付与され、 オンラインマーケット「
-          <span>Coconala</span>」では、販売総数が150件を突破し、やりとりを通してたくさんのお喜びの声をいただいております。
+          学生の頃にWebサイトやプログラムに興味を持ったことがきっかけで、Webデザインを中心に、プログラムやデザインの勉強をはじめました。 世界最大級の動画サイト「<span>YouTube</span>」では、特定の人物のみに表示される「チャンネルの認証バッジ」が付与され、 オンラインマーケット「<span>Coconala</span>」では、販売総数が150件を突破し、やりとりを通してたくさんのお喜びの声をいただいております。
         </p>
       </div>
     </figure>
@@ -262,12 +260,14 @@ figure.aboutme {
       font-size: 1.5rem;
     }
     p {
-      font-family: niveau-grotesk, sans-serif;
       letter-spacing: 0.01em;
       margin-top: 0;
       margin-bottom: 0;
       font-size: 0.8rem;
       color: #6f6f6f;
+      &.initial {
+        font-family: niveau-grotesk, sans-serif;
+      }
       &:last-of-type {
         @media (max-width: 767.98px) {
           margin-bottom: 1rem;

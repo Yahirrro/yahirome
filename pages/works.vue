@@ -27,20 +27,24 @@
 </template>
 
 <style lang="scss">
+h1.pagetitle {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  font-weight: bolder;
+  margin-bottom: 100px;
+  span {
+    border-bottom: 5px solid yellow;
+  }
+  &.small {
+    margin-bottom: 50px;
+  }
+}
 .post-index {
   padding-top: 50px;
   padding-bottom: 100px;
-  h1.pagetitle {
-    width: 100%;
-    text-align: center;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    font-weight: bolder;
-    margin-bottom: 100px;
-    span {
-      border-bottom: 5px solid yellow;
-    }
-  }
+  
   .container {
     max-width: 1200px;
     padding-left: 20px;

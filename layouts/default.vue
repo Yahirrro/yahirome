@@ -33,6 +33,13 @@ export default {
   components: {
     navbar,
     mainfooter
+  },
+  head() {
+    return {
+      script: [
+        { src: "/typekit.js" },
+      ]
+    };
   }
 };
 </script>
