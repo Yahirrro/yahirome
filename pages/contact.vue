@@ -6,7 +6,8 @@
         <span>お問い合わせ</span>
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
-      <form v-if="isSubmit === false" @submit.prevent="onSubmit">
+
+      <form @submit.prevent="onSubmit" name="contact" netlify>
 
         <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
         <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
@@ -41,22 +42,6 @@
         <p>折返しご連絡いたしますので、しばらくお待ち下さい。</p>
       </div>
 
-
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-
-        <select class="form-control" name="selecttype" v-model="selecttype" required>
-          <option>仕事の依頼</option>
-          <option>取材の依頼</option>
-          <option>宗教の勧誘</option>
-          <option>情報商材の押し売り</option>
-          <option>その他</option>
-        </select>
-        <input type="text" name="organization">
-        <input type="text" name="name" required>
-        <input type="text" name="email" required>
-        <input type="text" name="title">
-        <textarea type="text" name="body" required></textarea>
-      </form>
 
     </section>
   </div>
@@ -146,22 +131,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      const params = new URLSearchParams()
-
-      params.append('form-name', 'contact') // Forms使うのに必要
-
-      params.append('selecttype', this.selecttype)
-      params.append('organization', this.organization)
-      params.append('name', this.name)
-      params.append('email', this.email)
-      params.append('title', this.title)
-      params.append('body', this.body)
-
-      axios
-        .post('/', params)
-        .then(() => {
-          this.isSubmit = true
-        })
+      this.isSubmit = true
     }
   }
 };
