@@ -9,7 +9,7 @@
       <form v-if="isSubmit === false" @submit.prevent="onSubmit">
 
         <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
-        <select class="form-control" id="selecttype" v-model="selecttype" required>
+        <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
           <option>仕事の依頼</option>
           <option>取材の依頼</option>
           <option>宗教の勧誘</option>
@@ -18,19 +18,19 @@
         </select>
 
         <label for="organization">会社名 / 団体名</label>
-        <input type="text" id="organization" v-model="organization">
+        <input type="text" id="organization" name="organization" v-model="organization">
 
         <label for="name">お名前 <span class="badge">必須</span></label>
-        <input type="text" id="name" v-model="name" required>
+        <input type="text" id="name" name="name" v-model="name" required>
 
         <label for="email">メールアドレス <span class="badge">必須</span></label>
-        <input type="text" id="email" v-model="email" required>
+        <input type="text" id="email" name="email" v-model="email" required>
         
         <label for="title">件名</label>
-        <input type="text" id="title" v-model="title">
+        <input type="text" id="title" name="title" v-model="title">
 
         <label for="body">本文 <span class="badge">必須</span></label>
-        <textarea type="text" id="body" v-model="body" required></textarea>
+        <textarea type="text" id="body" name="body" v-model="body" required></textarea>
 
         <button class="btn btn-yellow" type="submit">送信</button>
       </form>
@@ -44,29 +44,18 @@
 
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
 
-        <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
-        <select class="form-control" id="selecttype" v-model="selecttype" required>
+        <select class="form-control" name="selecttype" v-model="selecttype" required>
           <option>仕事の依頼</option>
           <option>取材の依頼</option>
           <option>宗教の勧誘</option>
           <option>情報商材の押し売り</option>
           <option>その他</option>
         </select>
-
-        <label for="organization">会社名 / 団体名</label>
-        <input type="text" id="organization" v-model="organization">
-
-        <label for="name">お名前 <span class="badge">必須</span></label>
-        <input type="text" id="name" v-model="name" required>
-
-        <label for="email">メールアドレス <span class="badge">必須</span></label>
-        <input type="text" id="email" v-model="email" required>
-        
-        <label for="title">件名</label>
-        <input type="text" id="title" v-model="title">
-
-        <label for="body">本文 <span class="badge">必須</span></label>
-        <textarea type="text" id="body" v-model="body" required></textarea>
+        <input type="text" name="organization">
+        <input type="text" name="name" required>
+        <input type="text" name="email" required>
+        <input type="text" name="title">
+        <textarea type="text" name="body" required></textarea>
       </form>
 
     </section>
@@ -150,6 +139,7 @@ export default {
       organization: '',
       name: '',
       email: '',
+      title: '',
       body: '',
       isSubmit: false
     }
@@ -164,6 +154,7 @@ export default {
       params.append('organization', this.organization)
       params.append('name', this.name)
       params.append('email', this.email)
+      params.append('title', this.title)
       params.append('body', this.body)
 
       axios
