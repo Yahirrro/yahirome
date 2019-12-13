@@ -6,36 +6,37 @@
         <span>お問い合わせ</span>
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
+      
+      <no-ssr>
+        <form name="contact" netlify>
 
-      <form name="contact" netlify>
+          <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
+          <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
+            <option>仕事の依頼</option>
+            <option>取材の依頼</option>
+            <option>宗教の勧誘</option>
+            <option>情報商材の押し売り</option>
+            <option>その他</option>
+          </select>
 
-        <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
-        <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
-          <option>仕事の依頼</option>
-          <option>取材の依頼</option>
-          <option>宗教の勧誘</option>
-          <option>情報商材の押し売り</option>
-          <option>その他</option>
-        </select>
+          <label for="organization">会社名 / 団体名</label>
+          <input type="text" id="organization" name="organization" v-model="organization">
 
-        <label for="organization">会社名 / 団体名</label>
-        <input type="text" id="organization" name="organization" v-model="organization">
+          <label for="name">お名前 <span class="badge">必須</span></label>
+          <input type="text" id="name" name="name" v-model="name" required>
 
-        <label for="name">お名前 <span class="badge">必須</span></label>
-        <input type="text" id="name" name="name" v-model="name" required>
+          <label for="email">メールアドレス <span class="badge">必須</span></label>
+          <input type="text" id="email" name="email" v-model="email" required>
+          
+          <label for="title">件名</label>
+          <input type="text" id="title" name="title" v-model="title">
 
-        <label for="email">メールアドレス <span class="badge">必須</span></label>
-        <input type="text" id="email" name="email" v-model="email" required>
-        
-        <label for="title">件名</label>
-        <input type="text" id="title" name="title" v-model="title">
+          <label for="body">本文 <span class="badge">必須</span></label>
+          <textarea type="text" id="body" name="body" v-model="body" required></textarea>
 
-        <label for="body">本文 <span class="badge">必須</span></label>
-        <textarea type="text" id="body" name="body" v-model="body" required></textarea>
-
-        <button class="btn btn-yellow" type="submit">送信</button>
-      </form>
-
+          <button class="btn btn-yellow" type="submit">送信</button>
+        </form>
+      </no-ssr>
       <div class="done" v-if="isSubmit === true">
         <h2>Done!</h2>
         <p>送信は完了しました!</p>
