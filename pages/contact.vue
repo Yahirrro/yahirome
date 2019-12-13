@@ -139,6 +139,7 @@ section#content {
 </style>
 <script>
 import headerAnm from "~/components/header/header_animated.vue";
+import axios from 'axios'
 export default {
   components: {
     headerAnm
