@@ -7,7 +7,7 @@
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
 
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" netlify>
         <div>
         <label for="organization">会社名 / 団体名</label>
         <input type="text" id="organization" name="organization" v-model="organization">
@@ -33,7 +33,7 @@
         <textarea type="text" id="body" name="body" v-model="body" required></textarea>
         </div>
 
-        <button class="btn btn-yellow" v-model="isSubmit" type="submit">送信</button>
+        <button class="btn btn-yellow" type="submit">送信</button>
       </form>
       <div class="done" v-if="isSubmit">
         <h2>Done!</h2>
