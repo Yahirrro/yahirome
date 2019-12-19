@@ -16,7 +16,19 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: "Webデザインを中心に、プログラムやデザイン、動画編集などを幅広く行っています。"
+      },
+      {
+        property: "og:image",
+        content: "https://yahiro.me/thumb.png"
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:site",
+        content: "Yahimotto"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }]
