@@ -6,8 +6,7 @@
         <span>お問い合わせ</span>
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
-
-      <form name="contact" method="POST" netlify>
+      <form name="contact" method="POST">
         <div>
         <label for="organization">会社名 / 団体名</label>
         <input type="text" id="organization" name="organization" v-model="organization">
