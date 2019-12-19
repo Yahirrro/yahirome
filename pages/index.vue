@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import Lottie from "~/components/Lottie.vue";
+import Lottie from "~/components/lottie.vue";
 // JSONデータを読み込み
 import * as main_logo from "~/assets/animation/logo_anm.json";
 import * as hukidashi from "~/assets/animation/hukidashi.json";
