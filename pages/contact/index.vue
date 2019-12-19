@@ -8,6 +8,17 @@
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
       <form name="contact" method="POST">
         <input type="hidden" name="form-name" value="contact" />
+        
+        <div>
+        <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
+        <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
+          <option value="仕事の依頼">仕事の依頼</option>
+          <option value="取材の依頼">取材の依頼</option>
+          <option value="制作物への感想">制作物への感想</option>
+          <option value="その他">その他</option>
+        </select>
+        </div>
+
         <div>
         <label for="organization">会社名 / 団体名</label>
         <input type="text" id="organization" name="organization" v-model="organization">
