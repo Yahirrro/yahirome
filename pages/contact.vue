@@ -7,37 +7,35 @@
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
 
-      <no-ssr>
-        <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true">
+        <div>
+        <label for="organization">会社名 / 団体名</label>
+        <input type="text" id="organization" name="organization" v-model="organization">
+        </div>
 
-          <label for="selecttype">お問い合わせの種類 <span class="badge">必須</span></label>
-          <select class="form-control" id="selecttype" name="selecttype" v-model="selecttype" required>
-            <option>仕事の依頼</option>
-            <option>取材の依頼</option>
-            <option>宗教の勧誘</option>
-            <option>情報商材の押し売り</option>
-            <option>その他</option>
-          </select>
+        <div>
+        <label for="name">お名前 <span class="badge">必須</span></label>
+        <input type="text" id="name" name="name" v-model="name" required>
+        </div>
 
-          <label for="organization">会社名 / 団体名</label>
-          <input type="text" id="organization" name="organization" v-model="organization">
+        <div>
+        <label for="email">メールアドレス <span class="badge">必須</span></label>
+        <input type="email" id="email" name="email" v-model="email" required>
+        </div>
 
-          <label for="name">お名前 <span class="badge">必須</span></label>
-          <input type="text" id="name" name="name" v-model="name" required>
+        <div>
+        <label for="title">件名</label>
+        <input type="text" id="title" name="title" v-model="title">
+        </div>
 
-          <label for="email">メールアドレス <span class="badge">必須</span></label>
-          <input type="text" id="email" name="email" v-model="email" required>
-          
-          <label for="title">件名</label>
-          <input type="text" id="title" name="title" v-model="title">
+        <div>
+        <label for="body">本文 <span class="badge">必須</span></label>
+        <textarea type="text" id="body" name="body" v-model="body" required></textarea>
+        </div>
 
-          <label for="body">本文 <span class="badge">必須</span></label>
-          <textarea type="text" id="body" name="body" v-model="body" required></textarea>
-
-          <button class="btn btn-yellow" type="submit">送信</button>
-        </form>
-      </no-ssr>
-      <div class="done" v-if="isSubmit === true">
+        <button class="btn btn-yellow" v-model="isSubmit" type="submit">送信</button>
+      </form>
+      <div class="done" v-if="isSubmit">
         <h2>Done!</h2>
         <p>送信は完了しました!</p>
         <p>折返しご連絡いたしますので、しばらくお待ち下さい。</p>
@@ -52,6 +50,8 @@
 section#content {
   padding-top: 50px;
   padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
   max-width: 600px;
   margin-right: auto;
   margin-left: auto;
@@ -83,6 +83,9 @@ section#content {
       border: 2px solid rgba(0, 0, 0, 0.05);
       background-color: rgba(0, 0, 0, 0.03);
       box-sizing: border-box;
+      border-radius : 0;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
       &:focus {
         outline: 2px solid rgba(0, 0, 0, 0.1);
       }
@@ -118,6 +121,21 @@ import axios from 'axios'
 export default {
   components: {
     headerAnm
+  },
+  head() {
+    return {
+      title: "Contact" + " | 星乃やひろ (Yahiro Hoshino)",
+      meta: [
+        {
+          property: "og:type",
+          content: "website"
+        },
+        {
+          property: "og:url",
+          content: "https://yahiro.me/contact"
+        }
+      ]
+    };
   },
    data() {
     return {
