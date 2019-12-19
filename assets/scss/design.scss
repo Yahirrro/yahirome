@@ -23,9 +23,8 @@ body {
       .hukidashi {
         position: absolute;top: 50%;
         left: 50%;
-        transform: translateY(-50%) translateX(-50%);
+        transform: translateY(calc(-50% - 200px)) translateX(-50%);
         transition : all 1s;
-        padding-bottom: 400px;
         opacity : 0;
         &.active {
           opacity : 1;
