@@ -7,6 +7,7 @@
       </h1>
       <p class="text-center">お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。</p>
       <form name="contact" method="POST">
+        <input type="hidden" name="form-name" value="contact" />
         <div>
         <label for="organization">会社名 / 団体名</label>
         <input type="text" id="organization" name="organization" v-model="organization">
