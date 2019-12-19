@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { APIKEY_works } = process.env;
 export default {
-  mode: "spa",
+  mode: "universal",
   /*
    ** Headers of the page
    */
