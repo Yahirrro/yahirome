@@ -20,19 +20,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      .hukidashi {
-        position: absolute;top: 50%;
-        left: 50%;
-        transform: translateY(calc(-50% - 170px)) translateX(-50%);
-        transition : all 1s;
-        opacity : 0;
-        &.active {
-          opacity : 1;
-        }
-      }
-      .logo {
-        max-width: 200px;
-        width: 40% !important;
+      .text_anm {
+        background-color: yellow;
       }
     }
   }

@@ -33,7 +33,7 @@
           loop: this.options.loop !== false,
           autoplay: this.options.autoplay !== false,
           animationData: this.options.animationData.default,  // ここだけ変更何故かデフォルトを入れないと動かなかった… (要検証)
-          rendererSettings: this.options.rendererSettings
+          rendererSettings: this.options.rendererSettings,
         }
       );
       this.$emit('animCreated', this.anim)
