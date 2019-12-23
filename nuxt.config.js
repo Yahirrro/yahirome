@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { APIKEY_works } = process.env;
+const axios = require("axios");
 export default {
   mode: "spa",
   /*
@@ -16,7 +17,8 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Webデザインを中心に、プログラムやデザイン、動画編集などを幅広く行っています。"
+        content:
+          "Webデザインを中心に、プログラムやデザイン、動画編集などを幅広く行っています。"
       },
       {
         property: "og:image",
@@ -53,7 +55,30 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ["@nuxtjs/sitemap"],
+
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: "https://yahiro.me",
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: false,
+    exclude: ["post/"],
+    routes(callback) {
+      axios
+        .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
+          headers: { "X-API-KEY": process.env.APIKEY_works }
+        })
+        .then(res => {
+          var routes = res.data.contents.map(works => {
+            return "/works/" + works.id;
+          });
+
+          callback(null, routes);
+        })
+        .catch(callback);
+    }
+  },
   /*
    ** Build configuration
    */

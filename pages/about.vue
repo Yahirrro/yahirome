@@ -71,7 +71,7 @@
             <ul class="skils">
               <li>Webデザイン</li>
               <li>フロントエンド</li>
-              <li>UI / UXデザイン</li>
+              <li>UIデザイン</li>
               <li>動画制作</li>
             </ul>
           </figure>
@@ -83,7 +83,7 @@
               <li>HTML</li>
               <li>CSS / SCSS</li>
               <li>PHP</li>
-              <li>Javascript</li>
+              <li>JavaScript</li>
               <li>Vue.js</li>
               <li>Nuxt.js</li>
             </ul>
