@@ -110,7 +110,7 @@ export default {
         },
         {
           property: "og:image",
-          content: this.thumbnail
+          content: this.page.thumbnail.url
         },
         {
           name: "twitter:card",
