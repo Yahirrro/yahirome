@@ -2,7 +2,7 @@ require("dotenv").config();
 const { APIKEY_works } = process.env;
 const axios = require("axios");
 export default {
-  mode: "spa",
+  mode: "universal",
   /*
    ** Headers of the page
    */
@@ -100,6 +100,17 @@ export default {
   },
 
   generate: {
-    fallback: true
+    fallback: true,
+    routes() {
+      return axios
+        .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
+          headers: { "X-API-KEY": process.env.APIKEY_works }
+        })
+        .then(res => {
+          return res.data.contents.map(data => {
+            return "/works/" + data.id;
+          });
+        });
+    }
   }
 };

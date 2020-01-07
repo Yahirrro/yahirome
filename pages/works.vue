@@ -7,14 +7,19 @@
       </h1>
       <div class="container">
         <article class="post-card" v-for="works in works" :key="works.id">
-          <nuxt-link :to="'/works/'+works.id">
-            <div class="image" :style="'background-image: url('+works.thumbnail.url+');'"></div>
+          <nuxt-link :to="'/works/' + works.id">
+            <div
+              class="image"
+              :style="'background-image: url(' + works.thumbnail.url + ');'"
+            ></div>
             <div class="category">
               <div
                 class="content"
                 v-for="category in works.category"
                 :key="category.id"
-              >{{category.title}}</div>
+              >
+                {{ category.title }}
+              </div>
             </div>
             <div class="text">
               <h1 v-html="works.title"></h1>
@@ -26,93 +31,7 @@
   </div>
 </template>
 
-<style lang="scss">
-h1.pagetitle {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  font-weight: bolder;
-  margin-bottom: 100px;
-  span {
-    border-bottom: 5px solid yellow;
-  }
-  &.small {
-    margin-bottom: 50px;
-  }
-}
-.post-index {
-  padding-top: 50px;
-  padding-bottom: 100px;
-  
-  .container {
-    max-width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: calc(33.33% - 20px) calc(33.33% - 20px) calc(
-        33.33% - 20px
-      );
-    grid-gap: 30px;
-    grid-template-rows: auto;
-    @media (max-width: 767.98px) {
-      display: block;
-    }
-    .post-card {
-      position: relative;
-      border: 2px solid black;
-      transition: all 0.3s cubic-bezier(0.9, 0.85, 0, 2.77);
-      @media (max-width: 767.98px) {
-        margin-bottom: 20px;
-        &:active {
-          transform: rotate(5deg);
-        }
-      }
-      &:hover {
-        transform: rotate(5deg);
-      }
-      a,
-      a:hover {
-        text-decoration: none;
-        color: black;
-      }
-      .image {
-        width: 100%;
-        height: 250px;
-        background-color: black;
-        background-size: cover;
-        background-position: center;
-      }
-      .category {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: flex;
-        .content {
-          padding: 5px;
-          background-color: yellow;
-          font-weight: bold;
-          font-size: 0.8rem;
-          border-left: 2px solid black;
-          border-bottom: 2px solid black;
-        }
-      }
-      .text {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        letter-spacing: 0.1em;
-        h1 {
-          margin: 0;
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
 
 <script>
 import axios from "axios";
