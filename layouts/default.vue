@@ -14,7 +14,7 @@
     <transition name="page">
       <nuxt />
     </transition>
-    <mainfooter v-if="$nuxt.$route.path != '/'" />
+    <mainfooter v-if="$route.path != '/'" />
   </div>
 </template>
 <style lang="scss">
