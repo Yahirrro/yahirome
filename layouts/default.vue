@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="__top__right__title">星乃やひろ</h1>
+    <h1 class="__top__right__title">Yahiro Nakamoto</h1>
     <nuxt-link to="/" aria-label="Go to Top">
       <lottie
         class="__top__left__logo"

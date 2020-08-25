@@ -2,7 +2,7 @@
   <footer id="main-footer">
     <div class="container">
       <div class="left">
-        <p class="name">Yahiro Hoshino</p>
+        <p class="name">Yahiro Nakamoto</p>
       </div>
       <div class="right">
         <ul>
@@ -25,7 +25,7 @@
             </a>
           </li>
           <li>
-            <a href="https://link.yahiro.me/youtube">
+            <a href="https://www.youtube.com/channel/UCGVHJNZGpZNh9oNKZ051E4A">
               <svg
                 aria-hidden="true"
                 focusable="false"

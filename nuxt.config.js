@@ -3,11 +3,12 @@ const { APIKEY_works } = process.env;
 const axios = require("axios");
 export default {
   mode: "universal",
+  target: 'static',
   /*
    ** Headers of the page
    */
   head: {
-    title: "星乃やひろ (Yahiro Hoshino)",
+    title: "Yahiro Nakamoto",
     htmlAttrs: {
       lang: "ja"
     },
@@ -67,7 +68,7 @@ export default {
     routes(callback) {
       axios
         .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
-          headers: { "X-API-KEY": process.env.APIKEY_works }
+          headers: { "X-API-KEY": "e97d2214-a9de-428c-8c3d-cf9b9434628e" }
         })
         .then(res => {
           var routes = res.data.contents.map(works => {
@@ -92,6 +93,9 @@ export default {
   env: {
     APIKEY_works
   },
+  privateRuntimeConfig: {
+    APIKEY_works: "e97d2214-a9de-428c-8c3d-cf9b9434628e"
+  },
 
   router: {
     scrollBehavior: function(to, from, savedPosition) {
@@ -104,7 +108,7 @@ export default {
     routes() {
       return axios
         .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
-          headers: { "X-API-KEY": process.env.APIKEY_works }
+          headers: { "X-API-KEY": "e97d2214-a9de-428c-8c3d-cf9b9434628e" }
         })
         .then(res => {
           return res.data.contents.map(data => {

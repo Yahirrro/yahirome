@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-anm :title="'About'" :description="'About Yahiro Hoshino'" />
+    <header-anm :title="'About'" :description="'About Yahiro Nakamoto'" />
     <article id="content">
       <div class="container">
         <h2>
@@ -93,9 +93,9 @@
     </article>
     <figure class="aboutme">
       <div class="name">
-        <img src="/icon.png" class="yahiro" alt="星乃やひろ (Yahiro Hoshino)" />
-        <h1>星乃やひろ</h1>
-        <p class="initial">Yahiro Hoshino</p>
+        <img src="/icon.png" class="yahiro" alt="Yahiro Nakamoto" />
+        <h1>中本八尋</h1>
+        <p class="initial">Yahiro Nakamoto</p>
         <p>
           <small>高校生</small>
         </p>
@@ -116,7 +116,7 @@ import headerAnm from "~/components/header/header_animated.vue";
 export default {
   head() {
     return {
-      title: "About" + " | 星乃やひろ (Yahiro Hoshino)",
+      title: "About" + " | Yahiro Nakamoto",
       meta: [
         {
           property: "og:type",

@@ -1,6 +1,6 @@
 # yahiro.me
 
-> Hoshino Yahiro Portfolio
+> Nakamoto Yahiro Portfolio
 
 ## Build Setup
 

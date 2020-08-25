@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-anm :title="'Works'" :description="'Yahiro Hoshino Works'" />
+    <header-anm :title="'Works'" :description="'Yahiro Nakamoto Works'" />
     <section class="post-index">
       <h1 class="pagetitle">
         <span>制作実績</span>
@@ -10,7 +10,7 @@
           <nuxt-link :to="'/works/' + works.id">
             <div
               class="image"
-              :style="'background-image: url(' + works.thumbnail.url + ');'"
+              :style="'background-image: url(' + works.thumbnail.url + '?w=800&q=60' + ');'"
             ></div>
             <div class="category">
               <div
@@ -39,7 +39,7 @@ import headerAnm from "~/components/header/header_animated.vue";
 export default {
   head() {
     return {
-      title: "Works" + " | 星乃やひろ (Yahiro Hoshino)",
+      title: "Works" + " | Yahiro Nakamoto",
       meta: [
         {
           property: "og:type",
@@ -61,22 +61,16 @@ export default {
   components: {
     headerAnm
   },
-
+  async asyncData({ $config: { APIKEY_works }}) {
+    const response = await axios
+      .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
+        headers: { "X-API-KEY": APIKEY_works }
+      });
+    return {
+      works: response.data.contents
+    }
+  },
   methods: {
-    fetchWorks() {
-      axios
-        .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
-          headers: { "X-API-KEY": process.env.APIKEY_works }
-        })
-        .then(res => {
-          console.log(res.data);
-          this.works = res.data.contents;
-          console.log(this.works);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
     modifyDatetime(date) {
       const Ymd = date.split("T")[0];
       const His = date.split("T")[1].split(".")[0];
@@ -84,8 +78,5 @@ export default {
       return Ymd + " " + His;
     }
   },
-  mounted() {
-    this.fetchWorks();
-  }
 };
 </script>

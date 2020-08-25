@@ -93,7 +93,7 @@ export default {
   },
   head() {
     return {
-      title: "Contact" + " | 星乃やひろ (Yahiro Hoshino)",
+      title: "Contact" + " | Yahiro Nakamoto",
       meta: [
         {
           property: "og:type",

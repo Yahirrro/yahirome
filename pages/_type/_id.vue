@@ -4,12 +4,12 @@
       <div class="bg-color"></div>
       <div
         class="bg"
-        :style="'background-image: url(' + page.thumbnail.url + ')'"
+        :style="'background-image: url(' + page.thumbnail.url + '?w=150&q=30' + ')'"
       ></div>
       <div class="grid">
         <div
           class="image"
-          :style="'background-image: url(' + page.thumbnail.url + ');'"
+          :style="'background-image: url(' + page.thumbnail.url + '?w=150&q=30' + ');'"
         ></div>
         <div class="text">
           <div class="category">
@@ -50,7 +50,7 @@
     </header>
     <article class="post">
       <div class="thumb">
-        <img :src="page.thumbnail.url" />
+        <img :src="page.thumbnail.url + '?w=1280&q=80'" />
       </div>
       <div class="container" v-html="page.body"></div>
     </article>
@@ -78,7 +78,7 @@ import axios from "axios";
 export default {
   head() {
     return {
-      title: this.page.title + " | 星乃やひろ (Yahiro Hoshino)",
+      title: this.page.title + " | Yahiro Nakamoto",
       meta: [
         {
           hid: "description",
@@ -99,7 +99,7 @@ export default {
         },
         {
           property: "og:site_name",
-          content: "星乃やひろ (Yahiro Hoshino)"
+          content: "Yahiro Nakamoto"
         },
         {
           property: "og:url",
@@ -128,10 +128,10 @@ export default {
       page: {}
     };
   },
-  asyncData({ params, error }) {
+  async asyncData({ params, error, $config: { APIKEY_works } }) {
     return axios
       .get(`https://yahiro.microcms.io/api/v1/${params.type}/${params.id}`, {
-        headers: { "X-API-KEY": process.env.APIKEY_works }
+        headers: { "X-API-KEY": APIKEY_works }
       })
       .then(res => {
         return {
