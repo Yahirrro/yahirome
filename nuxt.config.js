@@ -2,13 +2,12 @@ require("dotenv").config();
 const { APIKEY_works } = process.env;
 const axios = require("axios");
 export default {
-  mode: "universal",
   target: 'static',
   /*
    ** Headers of the page
    */
   head: {
-    title: "Yahiro Nakamoto",
+    title: "Yahiro Nakamoto (中本 八尋)",
     htmlAttrs: {
       lang: "ja"
     },
@@ -52,7 +51,16 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    [
+      'nuxt-image-extractor',
+      {
+    	baseUrl: 'https://images.microcms-assets.io',
+    	path: '/_images',
+    	extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
+      }
+    ]
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -104,7 +112,6 @@ export default {
   },
 
   generate: {
-    fallback: true,
     routes() {
       return axios
         .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {

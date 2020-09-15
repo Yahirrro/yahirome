@@ -4,12 +4,12 @@
       <div class="bg-color"></div>
       <div
         class="bg"
-        :style="'background-image: url(' + page.thumbnail.url + '?w=150&q=30' + ')'"
+        :style="`background-image: url( '${page.thumbnail.url}' );`"
       ></div>
       <div class="grid">
         <div
           class="image"
-          :style="'background-image: url(' + page.thumbnail.url + '?w=150&q=30' + ');'"
+          :style="`background-image: url( '${page.thumbnail.url}' );`"
         ></div>
         <div class="text">
           <div class="category">
@@ -50,7 +50,7 @@
     </header>
     <article class="post">
       <div class="thumb">
-        <img :src="page.thumbnail.url + '?w=1280&q=80'" />
+        <img :src="page.thumbnail.url" />
       </div>
       <div class="container" v-html="page.body"></div>
     </article>

@@ -36,7 +36,7 @@
         <br />Works
       </nuxt-link>
     </div>
-    <div class="nav-main__a-box">
+    <!-- <div class="nav-main__a-box">
       <a href="https://blog.yahiro.me" target="_blank">
         <svg
           aria-hidden="true"
@@ -53,7 +53,7 @@
         </svg>
         <br />Blog
       </a>
-    </div>
+    </div> -->
     <div class="nav-main__a-box">
       <nuxt-link to="/contact">
         <svg

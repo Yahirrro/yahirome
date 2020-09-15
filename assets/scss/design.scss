@@ -79,9 +79,10 @@ div#__nuxt {
   letter-spacing: -0.01em;
 
   @media (max-width: 767.98px) {
-    transform: scale(0.8);
-    bottom: 13px;
-    left: -8px;
+    transform: scale(.8);
+    transform-origin: bottom left;
+    bottom: 20px;
+    left: 20px;
   }
 
   &__a-box {
