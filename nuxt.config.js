@@ -55,9 +55,10 @@ export default {
     [
       'nuxt-image-extractor',
       {
-    	baseUrl: 'https://images.microcms-assets.io',
-    	path: '/_images',
-    	extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
+        baseUrl: 'https://images.microcms-assets.io',
+        SiteBaseUrl: 'https://yahiro.me',
+        path: '/_images',
+        extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
       }
     ]
   ],
