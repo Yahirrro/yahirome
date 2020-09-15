@@ -8,7 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Yahiro Nakamoto",
+    title: "Yahiro Nakamoto (中本 八尋)",
     htmlAttrs: {
       lang: "ja"
     },
@@ -52,7 +52,21 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    [
+      '~/modules/image.js',
+      {
+      	// (Required) CMS url
+    	baseUrl: 'https://images.microcms-assets.io',
+
+    	// (Optional) Dir where downloaded images will be stored
+    	path: '/_images',
+
+    	// (Optional) Array containing image formats
+    	extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
+      }
+    ]
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -104,7 +118,6 @@ export default {
   },
 
   generate: {
-    fallback: true,
     routes() {
       return axios
         .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {

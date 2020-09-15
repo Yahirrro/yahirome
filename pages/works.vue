@@ -10,7 +10,7 @@
           <nuxt-link :to="'/works/' + works.id">
             <div
               class="image"
-              :style="'background-image: url(' + works.thumbnail.url + '?w=800&q=60' + ');'"
+              :style="`background-image: url( '${works.thumbnail.url}' );`"
             ></div>
             <div class="category">
               <div

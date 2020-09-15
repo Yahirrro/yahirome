@@ -28,6 +28,7 @@
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "node-sass": "^4.13.0",
+    "nuxt-image-extractor": "https://github.com/Yahirrro/nuxt-image-extractor.git",
     "sass-loader": "^8.0.0",
     "vue-jest": "^4.0.0-0"
   }
