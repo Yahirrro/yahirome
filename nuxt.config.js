@@ -55,13 +55,8 @@ export default {
     [
       'nuxt-image-extractor',
       {
-      	// (Required) CMS url
     	baseUrl: 'https://images.microcms-assets.io',
-
-    	// (Optional) Dir where downloaded images will be stored
     	path: '/_images',
-
-    	// (Optional) Array containing image formats
     	extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
       }
     ]
