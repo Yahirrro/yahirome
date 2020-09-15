@@ -2,7 +2,6 @@ require("dotenv").config();
 const { APIKEY_works } = process.env;
 const axios = require("axios");
 export default {
-  mode: "universal",
   target: 'static',
   /*
    ** Headers of the page
@@ -54,7 +53,7 @@ export default {
    */
   buildModules: [
     [
-      '~/modules/image.js',
+      'nuxt-image-extractor',
       {
       	// (Required) CMS url
     	baseUrl: 'https://images.microcms-assets.io',
