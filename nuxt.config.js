@@ -53,7 +53,7 @@ export default {
    */
   buildModules: [
     [
-      '~/modules/nuxt-image-extractor.js',
+      'nuxt-image-extractor',
       {
         baseUrl: 'https://images.microcms-assets.io',
         SiteBaseUrl: 'https://yahiro.me',
