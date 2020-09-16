@@ -116,7 +116,7 @@ import headerAnm from "~/components/header/header_animated.vue";
 export default {
   head() {
     return {
-      title: "About" + " | Yahiro Nakamoto",
+      title: "About" + " | Yahiro Nakamoto (中本 八尋)",
       meta: [
         {
           property: "og:type",

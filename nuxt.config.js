@@ -58,7 +58,7 @@ export default {
         baseUrl: 'https://images.microcms-assets.io',
         SiteBaseUrl: 'https://yahiro.me',
         path: '/_images',
-        extensions: ['jpg', 'jpeg', 'gif', 'png', 'webp', 'svg'],
+        extensions: ['jpg', 'jpeg', 'png'],
       }
     ]
   ],
