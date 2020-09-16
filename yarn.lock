@@ -7024,9 +7024,9 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-"nuxt-image-extractor@https://github.com/Yahirrro/nuxt-image-extractor.git":
+"nuxt-image-extractor@https://github.com/Yahirrro/nuxt-image-extractor.git#feature/resizeImage":
   version "1.1.3"
-  resolved "https://github.com/Yahirrro/nuxt-image-extractor.git#cc7b6fbde0ab689fcb018a047fdffd1f481102cd"
+  resolved "https://github.com/Yahirrro/nuxt-image-extractor.git#00e7fc9daf0032c114babd476535e3c99ac4a295"
   dependencies:
     sharp "^0.26.0"
 

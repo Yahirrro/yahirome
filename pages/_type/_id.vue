@@ -78,7 +78,7 @@ import axios from "axios";
 export default {
   head() {
     return {
-      title: this.page.title + " | Yahiro Nakamoto",
+      title: this.page.title + " | Yahiro Nakamoto (中本 八尋)",
       meta: [
         {
           hid: "description",

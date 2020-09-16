@@ -93,7 +93,7 @@ export default {
   },
   head() {
     return {
-      title: "Contact" + " | Yahiro Nakamoto",
+      title: "Contact" + " | Yahiro Nakamoto (中本 八尋)",
       meta: [
         {
           property: "og:type",
