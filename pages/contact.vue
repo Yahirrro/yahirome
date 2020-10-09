@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-anm :title="'Contact'" :description="'Contact to me'" />
     <section id="content">
       <h1 class="pagetitle small">
         <span>お問い合わせ</span>
@@ -85,12 +84,9 @@
 </template>
 <style lang="scss"></style>
 <script>
-import headerAnm from "~/components/header/header_animated.vue";
 import axios from "axios";
 export default {
-  components: {
-    headerAnm
-  },
+  layout: 'page',
   head() {
     return {
       title: "Contact" + " | Yahiro Nakamoto (中本 八尋)",
@@ -121,6 +117,10 @@ export default {
     onSubmit() {
       this.isSubmit = true;
     }
+  },
+  
+  created() {
+    this.$nuxt.$emit('changeHeader', 'Contact', 'Contact to me')
   }
 };
 </script>

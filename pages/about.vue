@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-anm :title="'About'" :description="'About Yahiro Nakamoto'" />
     <article id="content">
       <div class="container">
         <h2>
@@ -112,8 +111,8 @@
 </template>
 <style lang="scss"></style>
 <script>
-import headerAnm from "~/components/header/header_animated.vue";
 export default {
+  layout: 'page',
   head() {
     return {
       title: "About" + " | Yahiro Nakamoto (中本 八尋)",
@@ -129,8 +128,8 @@ export default {
       ]
     };
   },
-  components: {
-    headerAnm
-  }
+  created() {
+    this.$nuxt.$emit('changeHeader', 'About', 'about');
+  },
 };
 </script>
