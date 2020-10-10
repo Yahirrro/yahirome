@@ -67,7 +67,9 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/sitemap"],
+  modules: [
+    "@nuxtjs/sitemap"
+  ],
 
   sitemap: {
     path: "/sitemap.xml",

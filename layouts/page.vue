@@ -5,12 +5,13 @@
     <client-only>
     <div class="LayoutPage_header">
       <AppHeader ref="AppHeader" :title="headerText.title" :description="headerText.description" />
+      <AppNotify />
     </div>
     </client-only>
     
     <nuxt
       class="LayoutPage_main"
-      v-bind:class="{ 'LayoutPage_main-full': $route.name.split('-').length > 1   }"
+      v-bind:class="{ 'LayoutPage_main-full': LayoutPageMainFull }"
       @changeHeader="changeHeader()" />
     
     <AppFooter v-if="$route.path != '/'" />
@@ -26,43 +27,65 @@ export default {
   },
   data() {
     return {
-      headerText: {}
+      headerText: {},
+      LayoutPageMainFull: false
     };
   },
   created() {
-    this.OnChangeHeader()
+    this.ChangeHeader()
+  },
+  mounted() {
+    if(this.$nuxt.$route.name.split('-').length > 1) {
+      this.LayoutPageMainFull = true
+    }
+    setTimeout(() => {
+      if(scrollY == 0 && this.LayoutPageMainFull == false) {
+        scroll({
+          top: window.innerHeight/4,
+          behavior: "smooth"
+        });;
+      }
+    }, 5000)
   },
   watch: {
     '$route': function(to, from) {
-      // window.scrollTo(0, 500)
+      if(to.name.split('-').length > 1) {
+        setTimeout(() => {
+          this.LayoutPageMainFull = true
+        }, 500)
+      }
+      else {
+        this.LayoutPageMainFull = false
+      }
     }
   },
   methods: {
-    OnChangeHeader() {
-      this.$nuxt.$on('changeHeader', this.ChangeHeader)
+    ChangeHeader() {
+      this.$nuxt.$on('changeHeader', (title, description) => {
+        this.headerText = {
+          title: title, description: description
+        }
+      })
     },
-    ChangeHeader(title, description) {
-      this.$emit('changeHeaderComponent', title, description)
-      this.headerText = {
-        title: title, description: description
-      }
+
+    OnLayoutPageMainFull() {
+      this.$nuxt.$on('LayoutPageMainFull', (data) => {
+        console.log(data)
+        this.LayoutPageMainFull = data
+      })
     }
   }
 }
 </script>
 
 <style lang="scss">
-.page-enter-active {
-  transition: all 0.5s ease;
-}
+.page-enter-active,
 .page-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.5, 0, 0, 1);
 }
-.page-enter {
-  transform: translateX(100vw);
-}
-.page-leave-to {
-  opacity: 0;
+.page-enter,
+.page-leave-active {
+  transform: translateY(100vh)
 }
 </style>
 

@@ -231,38 +231,58 @@ export default {
       AppHeaderAnimation: true,
       AppHeaderLeave: false,
       newTitle: this.title,
-      newDescription: this.description
+      newDescription: this.description,
+
+      OnAppHeaderAnimation_interval: null,
+      AppHeaderChange_interval: null
     }
   },
 
   created() {
-    this.OnAppHeaderAnimation();
+    this.OnAppHeaderAnimation().then(() => {
+      this.OnAppHeaderAnimation_interval = null
+    });
     this.OnAppHeader();
   },
 
   methods: {
-    OnAppHeaderAnimation() {
-      setTimeout(() => {
+    async OnAppHeaderAnimation() {
+      this.OnAppHeaderAnimation_interval = setTimeout(() => {
         this.AppHeaderAnimation = false;
       }, 30000);
     },
 
     OnAppHeader() {
-      window.clearTimeout(this.OnAppHeaderAnimation());
       this.$nuxt.$on('changeHeader', this.AppHeaderChange)
+      clearTimeout(this.OnAppHeaderAnimation_interval);
+      clearTimeout(this.AppHeaderChange_interval);
     },
+
     AppHeaderChange(title, description) {
-      window.clearTimeout(this.OnAppHeaderAnimation());
+      if(this.newTitle == title) {
+        console.log(window.innerHeight)
+        setTimeout(() => {
+          scroll({
+            top: window.innerHeight,
+            behavior: "smooth"
+          });;
+        }, 1)
+        
+        return
+      };
+
+      clearTimeout(this.OnAppHeaderAnimation_interval);
       this.AppHeaderAnimation = false;
-      window.setTimeout(() => {
+      setTimeout(() => {
         this.AppHeaderLeave = true;
       }, 1)
-      window.setTimeout(() => {
+      this.AppHeaderChange_interval = setTimeout(() => {
         this.AppHeaderLeave = false;
         this.newTitle = title;
         this.newDescription = description
         this.AppHeaderAnimation = true;
       }, 500)
+      this.AppHeaderChange_interval = null;
     }
   }
 }
