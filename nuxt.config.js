@@ -44,6 +44,8 @@ export default {
    */
   css: [{ src: "~/assets/scss/design.scss", lang: "scss" }],
 
+  components: true,
+
   /*
    ** Plugins to load before mounting the App
    */
@@ -65,7 +67,9 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/sitemap"],
+  modules: [
+    "@nuxtjs/sitemap"
+  ],
 
   sitemap: {
     path: "/sitemap.xml",
@@ -99,9 +103,6 @@ export default {
     extend(config, ctx) {}
   },
 
-  env: {
-    APIKEY_works
-  },
   privateRuntimeConfig: {
     APIKEY_works: "e97d2214-a9de-428c-8c3d-cf9b9434628e"
   },

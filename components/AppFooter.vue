@@ -50,10 +50,12 @@
     </div>
   </footer>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 footer#main-footer {
+  position: relative;
   z-index: 100;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
   padding-top: 20px;
   padding-bottom: 114px;
   font-family: niveau-grotesk, sans-serif;

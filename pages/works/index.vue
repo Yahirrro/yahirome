@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-anm :title="'Works'" :description="'Yahiro Nakamoto Works'" />
     <section class="post-index">
       <h1 class="pagetitle">
         <span>制作実績</span>
@@ -35,8 +34,9 @@
 
 <script>
 import axios from "axios";
-import headerAnm from "~/components/header/header_animated.vue";
 export default {
+  layout: 'page',
+
   head() {
     return {
       title: "Works" + " | Yahiro Nakamoto",
@@ -57,14 +57,10 @@ export default {
       works: {}
     };
   },
-
-  components: {
-    headerAnm
-  },
   async asyncData({ $config: { APIKEY_works }}) {
     const response = await axios
       .get("https://yahiro.microcms.io/api/v1/works?limit=1000", {
-        headers: { "X-API-KEY": APIKEY_works }
+        headers: { "X-API-KEY": 'e97d2214-a9de-428c-8c3d-cf9b9434628e' }
       });
     return {
       works: response.data.contents
@@ -78,5 +74,9 @@ export default {
       return Ymd + " " + His;
     }
   },
+  
+  created() {
+    this.$nuxt.$emit('changeHeader', 'Works', 'Yahiro Nakamoto Works')
+  }
 };
 </script>
