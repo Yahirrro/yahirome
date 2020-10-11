@@ -1,77 +1,62 @@
 <template>
   <header class="AppHeader" v-bind:class="{ 'AppHeader_animation' : AppHeaderAnimation, 'AppHeader_animation-leave' : AppHeaderLeave }">
-    <div class="content">
-      <h1>
-        <span>{{ newTitle }}</span>
-      </h1>
-      <div class="big">{{ newTitle }}</div>
-      <div class="left__top__box"></div>
-      <div class="left__top__text">{{ newDescription }}</div>
-      <div class="left__bottom__border"></div>
-      <div class="left__center__border"></div>
-    </div>
+    <div class="AppHeader_frame"></div>
+    <h1 class="AppHeader_title">
+      <span>{{ newTitle }}</span>
+    </h1>
+    <div class="AppHeader_titleBig">{{ newTitle }}</div>
+    <div class="AppHeader_logoBackground"></div>
+    <div class="AppHeader_leftTopText">{{ newDescription }}</div>
+    <div class="AppHeader_leftBottomBorder"></div>
+    <div class="AppHeader_leftCenterBorder"></div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .AppHeader_animation {
-  .content {
-    animation-name: borderSolid;
-    animation-duration: 2s;
-    animation-delay: 0s;
+  .AppHeader_title {      
+    animation-name: leftTranslate;
+    animation-duration: 3s;
+    animation-delay: -1s;
     animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 
-    @keyframes borderSolid {
+    @keyframes leftTranslate {
       0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    h1 {      
-      animation-name: leftTranslate;
-      animation-duration: 3s;
-      animation-delay: -1s;
-      animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-
-      @keyframes leftTranslate {
-        0% {
-          transform: translateY(-50%) translateX(100vw);
-        }
-        100% {
-          transform: translateY(-50%) translateX(0vw);
-        }
-      }
-      &:before {
-        animation-name: leftTranslate;
-        animation-duration: 5s;
-        animation-delay: 0.5s;
-        animation-timing-function: cubic-bezier(0.4, 0, 0, 1);
-      }
-      &:after {
-        animation-name: leftTranslate;
-        animation-duration: 5s;
-        animation-delay: 0s;
-        animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-      }
-    }
-  }
-  .big {
-    animation-name: rightTranslate;
-    animation-duration: 2s;
-    animation-timing-function: cubic-bezier(0.42, 0, 0, 1);
-    @keyframes rightTranslate {
-      0% {
-        transform: translateY(-50%) translateX(-100vw);
+        transform: translateY(-50%) translateX(100vw);
       }
       100% {
         transform: translateY(-50%) translateX(0vw);
       }
     }
+    &:before {
+      animation-name: leftTranslate;
+      animation-duration: 5s;
+      animation-delay: 0.5s;
+      animation-timing-function: cubic-bezier(0.4, 0, 0, 1);
+    }
+    &:after {
+      animation-name: leftTranslate;
+      animation-duration: 5s;
+      animation-delay: 0s;
+      animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
   }
-  .left__top__text {
+  .AppHeader_titleBig {
+    animation-name: rightTranslate;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.42, 0, 0, 1);
+    @keyframes rightTranslate {
+      0% {
+        transform: translateY(-50%) translateX(-100vw) rotate(0deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-50%) translateX(0vw) rotate(-15deg);
+        opacity: 1;
+      }
+    }
+  }
+  .AppHeader_leftTopText {
     animation-name: topTranslate;
     animation-duration: 3s;
     animation-delay: 0s;
@@ -85,7 +70,7 @@
       }
     }
   }
-  .left__center__border {
+  .AppHeader_leftCenterBorder {
     animation-name: leftTranslate_bar;
     animation-duration: 30s;
     animation-delay: -14s;
@@ -102,9 +87,10 @@
 }
 .AppHeader_animation-leave {
   @extend .AppHeader_animation;
-  .content, .content h1, .content h1:before, .content h1:after, .big, .left__top__text, .left__center__border {
+  .AppHeader_title, .AppHeader_title:before, .AppHeader_title:after, .AppHeader_titleBig, .AppHeader_leftTopText, .AppHeader_leftCenterBorder {
     animation-direction: reverse;
     animation-duration: 0.5s;
+    animation-delay: 0s;
   }  
 }
 
@@ -114,110 +100,112 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  .content {
+  z-index: 5;
+  &_frame {
     width: calc(100vw - 44px);
     height: calc(100vh - 44px);
     margin: 20px auto;
     border: 2px black solid;
-    h1 {
-      position: absolute;
-      top: 50%;
-      right: 40px;
-      z-index: 2;
-      transform: translateY(-50%);
-      margin: 0;
-      padding-right: 5%;
-      font-family: niveau-grotesk, sans-serif;
-      font-weight: 900;
-      font-style: italic;
-      font-size: 4rem;
-      letter-spacing: -0.01em;
-      color: black;
-      &:before {
-        content: "";
-        position: absolute;
-        left: -30px;
-        top: -50px;
-        display: inline-block;
-        transform: translateY(-50%);
-        width: 100px;
-        height: 20px;
-        background-color: black;
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        left: 100px;
-        bottom: -15px;
-        display: inline-block;
-        transform: translateY(-50%);
-        width: 100px;
-        height: 5px;
-        background-color: black;
-      }
-      span {
-        outline-offset: -10px;
-        border-bottom: 10px solid yellow;
-      }
-    }
-    .big {
-      z-index: 1;
-      position: absolute;
-      top: 50%;
-      right: calc(100vw + 30%);
-      transform: translateY(-50%);
-      margin: 0;
-      width: 100%;
-      text-align: right;
-      font-family: poynter-gothic-text-condense, sans-serif;
-      font-weight: 800;
-      font-style: italic;
-      font-size: 100vw;
-      letter-spacing: -0.04em;
-      color: rgba(0, 0, 0, 0.1);
-    }
-    .left__top__box {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 35px;
-      height: 35px;
-      background-color: white;
-    }
-    .left__top__text {
-      position: absolute;
-      top: 50px;
-      left: 50px;
-      margin: 0;
-      writing-mode: vertical-rl;
-      font-family: niveau-grotesk, sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-    }
-    .left__bottom__border {
+    z-index: 2;
+  }
+  &_title {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 2;
+    transform: translateY(-50%);
+    margin: 0;
+    padding-right: 5%;
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 4rem;
+    letter-spacing: -0.01em;
+    color: black;
+    &:before {
       content: "";
       position: absolute;
-      left: 80px;
-      bottom: 80px;
+      left: -30px;
+      top: -50px;
       display: inline-block;
+      transform: translateY(-50%);
       width: 100px;
-      height: 2px;
+      height: 20px;
       background-color: black;
     }
-    .left__center__border {
-      z-index: -1;
+    &:after {
       content: "";
       position: absolute;
-      left: 0px;
-      bottom: 160px;
+      left: 100px;
+      bottom: -15px;
       display: inline-block;
-      width: 50%;
-      height: 10px;
-      background-color: yellow;
       transform: translateY(-50%);
+      width: 100px;
+      height: 5px;
+      background-color: black;
     }
+    span {
+      outline-offset: -10px;
+      border-bottom: 10px solid yellow;
+    }
+  }
+  &_titleBig {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%) rotate(-15deg);
+    margin: 0;
+    width: 100%;
+    text-align: right;
+    font-family: 'niveau-grotesk', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 74vw;
+    letter-spacing: -0.08em;
+    color: #f3f3f3;
+  }
+  &_logoBackground {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+  }
+  &_leftTopText {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin: 0;
+    writing-mode: vertical-rl;
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+  &_leftBottomBorder {
+    content: "";
+    position: absolute;
+    left: 80px;
+    bottom: 80px;
+    display: inline-block;
+    width: 100px;
+    height: 2px;
+    background-color: black;
+  }
+  &_leftCenterBorder {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 160px;
+    display: inline-block;
+    width: 50%;
+    height: 10px;
+    background-color: yellow;
+    transform: translateY(-50%);
   }
 }
 </style>

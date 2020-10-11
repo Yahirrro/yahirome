@@ -1,9 +1,7 @@
 <template>
   <div>
     <section id="content">
-      <h1 class="pagetitle small">
-        <span>お問い合わせ</span>
-      </h1>
+      <PageTitle title="問合せ" enTitle="CONTACT"></PageTitle>
       <p class="text-center">
         お仕事の依頼、様々なご連絡に関しては、こちらからご送信ください。
       </p>

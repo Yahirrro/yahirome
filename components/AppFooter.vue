@@ -58,8 +58,7 @@ footer#main-footer {
   backdrop-filter: blur(15px);
   padding-top: 20px;
   padding-bottom: 114px;
-  font-family: niveau-grotesk, sans-serif;
-  font-style: italic;
+  font-family: acumin-pro, sans-serif;
   overflow: hidden;
   .container {
     max-width: 900px;
@@ -84,6 +83,7 @@ footer#main-footer {
     .left {
       p.name {
         font-size: 1.5rem;
+        margin-top: 1rem;
       }
     }
     .right {
@@ -95,8 +95,10 @@ footer#main-footer {
         li {
           padding: 0 10px;
           font-size: 1rem;
+          
           a {
             display: flex;
+            align-items: center;
           }
           svg {
             padding-top: 2px;
