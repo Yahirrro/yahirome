@@ -33,7 +33,8 @@ export default {
         content: "Yahimotto"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }],
+    script: [{ src: "/typekit.js" }]
   },
   /*
    ** Customize the progress-bar color

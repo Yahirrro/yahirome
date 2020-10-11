@@ -20,11 +20,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      script: [{ src: "/typekit.js" }]
-    };
-  },
   data() {
     return {
       headerText: {},

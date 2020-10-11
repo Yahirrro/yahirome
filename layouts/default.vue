@@ -21,11 +21,6 @@
 import * as main_logo from "~/assets/animation/logo_anm.json";
 
 export default {
-  head() {
-    return {
-      script: [{ src: "/typekit.js" }]
-    };
-  },
   data() {
     return {
       // データを定義
