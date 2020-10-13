@@ -14,24 +14,6 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Webデザインを中心に、プログラムやデザイン、動画編集などを幅広く行っています。"
-      },
-      {
-        property: "og:image",
-        content: "https://yahiro.me/thumb.png"
-      },
-      {
-        name: "twitter:card",
-        content: "summary_large_image"
-      },
-      {
-        name: "twitter:site",
-        content: "Yahimotto"
-      }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/logo.png" }],
     script: [{ src: "/typekit.js" }]
@@ -69,7 +51,8 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    'nuxt-seo'
   ],
 
   sitemap: {
@@ -92,6 +75,27 @@ export default {
           callback(null, routes);
         })
         .catch(callback);
+    }
+  },
+  seo: {
+    baseUrl: 'https://yahiro.me',
+    lang: 'ja',
+    language: 'Japanese',
+    name: 'Yahiro Nakamoto (中本 八尋)',
+    title: 'Yahiro Nakamoto (中本 八尋)',
+    templateTitle: '%title% | %name%',
+    description: 'デザインとテクノロジーを使って、プロダクトをより良くするお手伝いをしています。',
+    keywords: ['中本 八尋', 'Yahiro Nakamoto', 'フロントエンドエンジニア', 'UIデザイナー', '高校生'],
+    image: 'https://yahiro.me/thumb.png',
+    openGraph: {
+      name: 'Yahiro Nakamoto (中本 八尋)',
+      type: 'website',
+      image: 'https://yahiro.me/thumb.png'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@Yahimotto',
+      creator: '@Yahimotto'
     }
   },
   /*

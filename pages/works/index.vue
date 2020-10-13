@@ -194,19 +194,9 @@ export default {
   layout: 'page',
 
   head() {
-    return {
-      title: "Works" + " | Yahiro Nakamoto",
-      meta: [
-        {
-          property: "og:type",
-          content: "website"
-        },
-        {
-          property: "og:url",
-          content: "https://yahiro.me/works"
-        }
-      ]
-    };
+    return this.$seo({
+      title: 'Works'
+    })
   },
   data() {
     return {

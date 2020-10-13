@@ -86,19 +86,9 @@ import axios from "axios";
 export default {
   layout: 'page',
   head() {
-    return {
-      title: "Contact" + " | Yahiro Nakamoto (中本 八尋)",
-      meta: [
-        {
-          property: "og:type",
-          content: "website"
-        },
-        {
-          property: "og:url",
-          content: "https://yahiro.me/contact"
-        }
-      ]
-    };
+    return this.$seo({
+      title: 'Contact'
+    })
   },
   data() {
     return {

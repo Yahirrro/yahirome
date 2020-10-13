@@ -8,6 +8,11 @@
 <script>
 import * as animated_text from "~/assets/animation/top_text.json";
 export default {
+  head() {
+    return this.$seo({
+      templateTitle: '%name%'
+    })
+  },
   data() {
     return {
       // データを定義
