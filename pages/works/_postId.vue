@@ -294,50 +294,15 @@ import axios from "axios";
 export default {
   layout: 'page',
   head() {
-    return {
-      title: this.page.title + " | Yahiro Nakamoto (中本 八尋)",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.page.body
-        },
-        {
-          property: "og:title",
-          content: this.page.title
-        },
-        {
-          property: "og:description",
-          content: this.page.body
-        },
-        {
-          property: "og:type",
-          content: "article"
-        },
-        {
-          property: "og:site_name",
-          content: "Yahiro Nakamoto"
-        },
-        {
-          property: "og:url",
-          content:
-            "https://yahiro.me/works/" +
-            this.$nuxt.$route.params.postId
-        },
-        {
-          property: "og:image",
-          content: this.page.thumbnail.url
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image"
-        },
-        {
-          name: "twitter:site",
-          content: "Yahimotto"
-        }
-      ]
-    };
+    return this.$seo({
+      title: this.page.title,
+      templateTitle: '%title% | Works | %name%',
+      image: this.page.thumbnail.url,
+      openGraph: {
+        type: 'article',
+        image: this.page.thumbnail.url
+      },
+    })
   },
   data() {
     return {

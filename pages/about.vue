@@ -113,20 +113,11 @@
 <script>
 export default {
   layout: 'page',
+  
   head() {
-    return {
-      title: "About" + " | Yahiro Nakamoto (中本 八尋)",
-      meta: [
-        {
-          property: "og:type",
-          content: "website"
-        },
-        {
-          property: "og:url",
-          content: "https://yahiro.me/about"
-        }
-      ]
-    };
+    return this.$seo({
+      title: 'About'
+    })
   },
   created() {
     this.$nuxt.$emit('changeHeader', 'About', 'about');
