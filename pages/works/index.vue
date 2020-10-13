@@ -122,6 +122,7 @@
     border-radius: 20px;
     box-shadow: 0 3px 24px rgba(0,0,0,.16);
     transform: rotate3d(5, 3, 0, -25deg);
+    transform-style: flat;
     cursor: pointer;
     @media (max-width: 767.98px) {
       height: 250px;
@@ -129,6 +130,7 @@
     }
   }
   &_text {
+    transform-style: flat;
     transition: all 3s cubic-bezier(0.5, 0, 0.25, 1);
     position: absolute;
     font-size: 2rem;
