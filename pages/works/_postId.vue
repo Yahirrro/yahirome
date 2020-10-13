@@ -297,6 +297,7 @@ export default {
     return this.$seo({
       title: this.page.title,
       templateTitle: '%title% | Works | %name%',
+      description: this.page.body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,''),
       image: this.page.thumbnail.url,
       openGraph: {
         type: 'article',
