@@ -71,7 +71,7 @@
       box-shadow: 0 13px 45px rgba(0, 0, 0, 0.35);
     }
     .WorksCard_text {
-      transform: scale(1.06);
+      transform: scale(1.06) translateZ(1000px);
     }
     .WorksCard_title, .WorksCard_categoryElement {
       box-shadow: 0 15px 24px rgba(0, 0, 0, 0.1);
@@ -131,6 +131,7 @@
   }
   &_text {
     transform-style: flat;
+    transform: translateZ(1000px);
     transition: all 3s cubic-bezier(0.5, 0, 0.25, 1);
     position: absolute;
     font-size: 2rem;
