@@ -64,13 +64,14 @@
 .WorksCard {
   position: relative;
   text-decoration: none;
+  transform-style: flat;
   &:hover {
     .WorksCard_image {
       transform: scale(1.035);
       box-shadow: 0 13px 45px rgba(0, 0, 0, 0.35);
     }
     .WorksCard_text {
-      transform: scale(1.06);
+      transform: scale(1.06) translateZ(1000px);
     }
     .WorksCard_title, .WorksCard_categoryElement {
       box-shadow: 0 15px 24px rgba(0, 0, 0, 0.1);
@@ -121,6 +122,7 @@
     border-radius: 20px;
     box-shadow: 0 3px 24px rgba(0,0,0,.16);
     transform: rotate3d(5, 3, 0, -25deg);
+    transform-style: flat;
     cursor: pointer;
     @media (max-width: 767.98px) {
       height: 250px;
@@ -128,6 +130,8 @@
     }
   }
   &_text {
+    transform-style: flat;
+    transform: translateZ(1000px);
     transition: all 3s cubic-bezier(0.5, 0, 0.25, 1);
     position: absolute;
     font-size: 2rem;
