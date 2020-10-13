@@ -64,6 +64,7 @@
 .WorksCard {
   position: relative;
   text-decoration: none;
+  transform-style: flat;
   &:hover {
     .WorksCard_image {
       transform: scale(1.035);
