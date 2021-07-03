@@ -31,6 +31,7 @@
     "node-sass": "^4.13.0",
     "nuxt-image-extractor": "https://github.com/Yahirrro/nuxt-image-extractor.git#feature/resizeImage",
     "sass-loader": "^8.0.0",
+    "sharp": "^0.26.0",
     "vue-jest": "^4.0.0-0"
   }
 }
